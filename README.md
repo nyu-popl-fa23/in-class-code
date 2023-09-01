@@ -123,7 +123,7 @@ sbt is an open source build tool for Scala projects, similar to Maven or Ant. Mo
 
 #### IntelliJ Idea
 
-We will be using the [IntelliJ Idea Java IDE](https://www.jetbrains.com/idea/). It is what we will use in class. And we will be demonstrating development techniques with this IDE that will make your life easier. If you prefer to use a different IDE, go for it. Essentially, any IDE that provides Scala/sbt integration should work. Though, we will only provide support for IntelliJ Idea.
+We will be using the [IntelliJ Idea Java IDE](https://www.jetbrains.com/idea/) in class and we will be demonstrating development techniques with this IDE that will make your life easier. If you prefer to use a different IDE, go for it. Essentially, any IDE that provides Scala/sbt integration should work. Though, we will only provide support for IntelliJ Idea.
 
 To install IntelliJ Idea, proceed as follows:
 
