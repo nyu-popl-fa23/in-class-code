@@ -143,6 +143,8 @@ There are many many free plugins available for Intellij. You should feel free to
 
 ### Importing a Scala sbt Project into Intellij
 
+Before importing a Scala project, please make sure that you have the Scala plugin installed.
+
 To import the Scala sbt project for the in-class-code into Intellij, do the following:
 
 * Open Intellij and proceed with one of the following two options:
