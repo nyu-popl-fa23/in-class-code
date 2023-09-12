@@ -1,42 +1,40 @@
 import scala.annotation.tailrec
-import popl.class03.Pair
 
-println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
+def sum(a: Int, b: Int): Int =
+  var acc = 0
+  var i = a
+  while i < b do
+    acc = acc + i
+    i = i + 1
+  acc
 
-def sum(a: Int, b: Int): Int = {
-	if (a < b) a + sum(a + 1, b) else 0
-} //> sum(a: Int, b: Int): Int
+def sumTail(a: Int, b: Int): Int =
+  @tailrec
+  def sumLoop(i: Int, acc: Int): Int =
+    if i < b then sumLoop(i + 1, acc + i) else acc
+  end sumLoop
+  sumLoop(a,0)
 
-def sumImp(a: Int, b: Int): Int = {
-	var i = a
-	var acc = 0
+def sumRec(a: Int, b: Int): Int =
+  if a < b then a + sumRec(a + 1, b)
+  else 0
 
-	while (i < b) {
-		acc = i + acc
-		i = i + 1
-	}
+sum(1, 3)
+sum(2, 5)
 
-	acc
-} //> sumImp(a: Int, b: Int): Int
+//sumRec(2, 100000000)
 
-def sumTail(a: Int, b: Int): Int = {
-	@tailrec def loop(i: Int, acc: Int): Int = {
-		if (i < b) loop(i + 1, i + acc) else acc
-	}
-
-	loop(a, 0)
-} //> sumTail(a: Int, b: Int): Int
-
-sumTail(1, 100000) //> res1: Int = 704982704
+sum(2, 100000000)
 
 
-val p = Pair(1, 3) // -> Pair.apply(1, 3) //> p  : popl.class03.Pair = Pair(1, 3)
-val p2 = p.setFirst(2) //> p2  : popl.class03.Pair = Pair(2, 3)
 
-p == p2 // -> p.equals(p2)                //> res2: Boolean = false
+val p = (1, (2, 3))
 
-p + p2 // -> p.+(p2)                      //> res3: popl.class03.Pair = Pair(3, 6)
+val x = 5
+val y1 = 4
 
-p.first //> res4: Int = 1
+y1 match
+  case y2 if y2 < 0 => println(s"$y2 < 0")
+  case y2 => println(s"$y2 >= 0")
 
-3.+(4) //> res5: Int = 7
+y1 + 2

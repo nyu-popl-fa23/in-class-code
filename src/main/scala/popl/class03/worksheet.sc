@@ -1,41 +1,38 @@
-import scala.annotation.tailrec
+import scala.annotation.targetName
 
-println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
+class Pair(private val first: Int, val second: Int) extends AnyRef:
+  override def toString: String = s"Pair($first, $second)"
 
-val x = 5                                 //> x  : Int = 5
-x + 2                                     //> res0: Int = 7
-	
-def max(x: Int, y: Int) =
-  if x < y then y else x               //> max: (x: Int, y: Int)Int
+  @targetName("plus")
+  def +(other: Pair): Pair =
+    new Pair(first + other.first, second + other.second)
 
-max(3, 6)                               //> res1: Int = 6
+class Triple(fst: Int, snd: Int, val third: Int)
+  extends Pair(first, snd):
+  override def toString: String = s"Triple(${this.fst}, $second, $third)"
 
-val pi = 3.14159                        //> pi  : Double = 3.14159
-def circle(r: Double): Double =
-  2 * pi * r
 
-circle(1)                               //> res2: Double = 6.28318
-	
-def area(r: Double): Double =
-  def square(x: Double) = x * x
-  square(r) * pi
-end area  																				//> area: (r: Double)Double
-  
-def sum(a: Int, b: Int): Int =
-  @tailrec
-  def loop(i: Int, acc: Int): Int =
-    if i < b then loop(i + 1, i + acc) else acc
-  loop(a, 0)
+//object Pair:
+  //def apply(fst: Int, snd: Int) = new Pair(fst, snd)
 
-def sumImp(a: Int, b: Int): Int =
-	var i = a
-	var acc = 0
-  	
-	while (i < b)
-		acc = i + acc
-		i = i + 1
-  	
-	acc
-  //> sumImp: (a: Int, b: Int)Int
-  
-sum(1, 100000)                            //> res3: Int = 704982704
+val p = Pair(1, 2) // Pair.apply(1, 2)
+val q = Pair(2, 3)
+
+val t = Triple(1, 2, 3)
+
+t.first
+
+
+p.toString
+
+
+p + q // p.+(q)
+
+object O:
+  val x: Int = 3
+  def foo(y: Int): Int = x + y
+
+O.x
+O.foo(3)
+
+

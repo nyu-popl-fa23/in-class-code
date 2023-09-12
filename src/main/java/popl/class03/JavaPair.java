@@ -8,18 +8,6 @@ public class JavaPair extends Object {
     first = fst;
     second = snd;
   }
-
-  public String toString() {
-	return "Pair(" + first + ", " + second + ")";
-  }
-  
-  static public JavaPair make(int fst, int snd) {
-	return new JavaPair(fst, snd);
-  }
-  
-  public void setFirst(int fst) {
-	first = fst;
-  }
   
   public int getFirst() {
     return first;

@@ -1,6 +1,7 @@
 package popl.class03
 
-object ScalaGreeter extends App:
+object ScalaGreeter:
   def message = "Hello Scala"
-    
-  println(message)  
+
+  def main(args: Array[String]): Unit =
+    println(message)  
