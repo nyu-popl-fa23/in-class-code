@@ -1,10 +1,3 @@
-val l = 1 :: 2 :: Nil
-
-def append(l1: List[Int], l2: List[Int]): List[Int] =
-  l1 match
-    case Nil => l2
-    case hd :: tl => hd :: append(tl, l2)
-
 enum List:
   case Nil
   case ::(hd: Int, tl: List)
@@ -19,7 +12,7 @@ def length(l: List): Int = l match
 
 def append(l1: List, l2: List): List = l1 match
   case Nil => l2
-  case hd :: tl => hd :: append(tl, l2))
+  case hd :: tl => hd :: append(tl, l2)
 
 val l1 = 6 :: 3 :: Nil
 val l2 = 0 :: 5 :: 2 :: Nil
