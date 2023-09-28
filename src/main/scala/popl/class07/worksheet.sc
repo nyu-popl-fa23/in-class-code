@@ -31,11 +31,11 @@ def eval(env: Env, e: Expr): Int =
 // 4 * (x + 8)
 val e = BinOp(Mul, Num(4), BinOp(Add, Var("x"), Num(8)))
 
-ov(e)
+val xs = ov(e)
 
 val env = Map("x" -> 2, "y" -> 1)
 
-eval(env, e)
+val res = eval(env, e)
 
 
 
