@@ -70,6 +70,6 @@ const fac6 = facFun(fac5)*/
 
 const fac = fix(facFun)
 
-const result = fac(fromNum(5))
+const result = toNum(fac(fromNum(5)))
 
 result
