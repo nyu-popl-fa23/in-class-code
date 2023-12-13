@@ -1,6 +1,6 @@
 package popl.class26
 
-class Queue[+A] private (deq: List[A], enq: List[A]):
+class Queue[+A] private (enq: List[A], deq: List[A]):
   
   def enqueue[B >: A](e: B): Queue[B] = 
     new Queue(e :: enq, deq)
